@@ -10,6 +10,8 @@ const port = process.env.PORT || 3000;
 
 // static routes
 app.use(express.static('./public'));
+// Keep compatibility with paths that include "/public/...".
+app.use('/public', express.static('./public'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -44,7 +46,10 @@ app.get('/page/:page', (req, res) => {
     }
 
     const slides = slideshow.slides.filter(slide => slide.page === req.params.page);
-    const pagePlants = plants.plants.filter(plant => plant.page === req.params.page);
+    const requestedPage = String(req.params.page || "").trim().toLowerCase();
+    const pagePlants = plants.plants.filter((plant) => (
+        String(plant.page || "").trim().toLowerCase() === requestedPage
+    ));
 
     res.type("text/html");
     res.render("page", { 

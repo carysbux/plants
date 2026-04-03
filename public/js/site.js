@@ -179,7 +179,9 @@ async function initSite() {
     const selectedSlides = (slideshow.slides || []).filter((slide) => (
       pageKey === "home" ? slide.home === true : slide.page === pageKey
     ));
-    const selectedPlants = (plants.plants || []).filter((plant) => plant.page === pageKey);
+    const selectedPlants = (plants.plants || []).filter((plant) => (
+      String(plant.page || "").trim().toLowerCase() === pageKey
+    ));
 
     renderNavigation(navigation, root);
     renderTitleAndDescription(title, description);
