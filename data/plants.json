@@ -20,6 +20,12 @@
             "image":"public/images/plants/tradescantia.jpg"
         },
         {
+            "page":"indoors",
+            "name":"Monstera",
+            "description":"A popular tropical houseplant known for its large, glossy leaves with natural splits and holes, Monstera adds a bold, jungle-like feel to any indoor space and is relatively easy to care for.",
+            "image":"public/images/plants/monstera.jpg"
+        },
+        {
             "page":"outdoors",
             "name":"Agave",
             "description":"A succulent with thick, spiky leaves arranged in a rosette, commonly used in xeriscaping and known for producing tequila.",
