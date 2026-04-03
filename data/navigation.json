@@ -2,7 +2,7 @@
     "brand": {
         "name": "Starter Garden",
         "link": "/",
-        "img": "/img/logo.png"
+        "img": "public/img/logo.png"
     },
     "links": [
         {
